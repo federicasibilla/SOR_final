@@ -44,7 +44,7 @@ param = {
     # model parameters
     'R0' : R0.copy(),                                  # initial conc. nxnxn_r [monod constants]
     'w'  : np.ones((n_r))*20,                          # energy conversion     [energy/mass]
-    'l'  : np.array([0.9,0.2,0.2,0.2]),                # leakage               [adim]
+    'l'  : np.array([1,0.8,0.7,0.6]),                  # leakage               [adim]
     'tau': np.array([np.inf,np.inf,np.inf,np.inf]),    # reinsertion rate inv. [time] 
     'g'  : g,                                          # growth conv. factors  [1/energy]
     'm'  : m,                                          # maintainance requ.    [energy/time]
@@ -83,7 +83,7 @@ vispreferences(mat)
 makenet(met_mat)
 
 
-frames, current_R, current_N, g_rates = simulate(1000, f, initial_guess, N0, param, mat)
+frames, current_R, current_N, g_rates = simulate(5000, f, initial_guess, N0, param, mat)
 
 R_ongrid(current_R)
 G_ongrid(g_rates,encode(frames[-2], np.array([0,1,2])))

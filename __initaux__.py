@@ -52,7 +52,7 @@ param = {
     'n'  : n,                                          # grid points in each dim
     'sor': 1.85,                                       # relaxation parameter
     'L'  : 40,                                         # grid true size        [length]
-    'D'  : 1e1,                                        # diffusion constant    [area/time] 
+    'D'  : 1e2,                                        # diffusion constant    [area/time] 
     'acc': 1e-3,                                      # maximum accepted stopping criterion   
     'ref': 0                                           # number of grid refinements to perform 
 }
@@ -74,7 +74,7 @@ mat = {
 }
 
 
-frames, current_R, current_N, g_rates = simulate(3000, f, initial_guess, N, param, mat)
+frames, current_R, current_N, g_rates = simulate(5000, f, initial_guess, N, param, mat)
 
 R_ongrid(current_R)
 G_ongrid(g_rates,encode(frames[-2], np.array([0,1])))
