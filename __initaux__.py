@@ -32,9 +32,12 @@ m   = np.array([0.,0.])
 initial_guess = np.random.uniform(9, 10, size=(n,n,n_r))
 
 # initialize species grid: random
-N = np.random.randint(2, size=(n, n,n_s))
-N[N[:,:,0]==1,1]=0
-N[N[:,:,0]==0,1]=1
+#N = np.random.randint(2, size=(n, n,n_s))
+#N[N[:,:,0]==1,1]=0
+#N[N[:,:,0]==0,1]=1
+N = np.zeros((n,n,n_s))
+N[:,20:,0]=1
+N[:,:20,1]=1
 
 
 # define parameters
